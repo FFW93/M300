@@ -145,4 +145,13 @@ Dies ist wie man im Screenshot sehen kann, ebenfalls gelungen.
 Als weiteren Test habe ich dann noch versucht mich einzuloggen.
 Dies hat nicht funktioniert. 
 Ich konnte aus Zeitgründen noch nicht herausfinden warum dies nicht funktioniert hat.
-![image]()
+![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%20161039.png)
+
+## Reflexion
+
+Ich habe zum Start dieses Moduls noch nichts gewusst über Vagrant und Automatisierte Virtualisierung.
+In meiner Firma habe ich zwar viel mit Virtualisierung zu tun, dies vorallem von VMware (ESXI, Vsphere und Vmware Horizon).
+Jedoch konfigurieren wir in unserer Firma noch alles manuell deshalb war das hier für mich neuland.
+Am start brauchte ich ein wenig Zeit um mich im Thema zurechtzufinden weshalb ich nun gegen Ende auch eher einen Zeitdruck hatte.
+Mein Wissen konnte ich bereit enorm erweitern, dies vorallem durch Vagrant und die Anwendung davon. 
+Das Thema finde ich Faszinierend und spanndend da es, wenn man sich erstmal zurechtgefunden hat, ermöglicht Services die sonst lange Zeit brauchen um sie zu implementieren, dies in wenigen Sekunden ermöglicht. Ich bin motiviert noch mehr von diesem Thema zu lernen.  
