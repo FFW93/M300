@@ -6,7 +6,8 @@
 Virtualbox ist eine Virtualisierungssoftware.
 ### Vagrant
 Vagrant ist eine Open-Source Software, mit der man das erstellen und konfigurieren von VMs automatisieren kann.
-Dafür erstellt man ein Vagrantfile in der man die gewünschten konfigurationen festlegt.
+Dafür erstellt man ein Vagrantfile.
+Ein Vagrantfile ist eine Konfigurationsdatei in einer eigenen Domain-spezifischen Sprache (DSL), die die Spezifikationen einer Vagrant-Umgebung definiert. Es enthält Informationen wie die gewünschte Box, Netzwerkkonfigurationen, Speichereinstellungen, Skripte zur automatischen Einrichtung der VM und andere Details, die Vagrant benötigt, um eine VM zu erstellen und zu konfigurieren.
 Hier ein Beispiel für den Inhalt eines solchen files:
 <pre><code> 
 Vagrant.configure("2") do |config|
@@ -17,7 +18,9 @@ Vagrant.configure("2") do |config|
             web.vm.network :forwarded_port, guest: 80, host: 4567
             web.vm.network "public_network", bridge: "en0: WLAN (AirPort)"
         end
-</pre></code>
+</code></pre>
+Der Zweite wichtige Bestandteil von Vagrant sind Boxen.
+Vagrant Boxen sind vordefinierte virtuelle Maschinen (VMs), die als Basis für die Erstellung neuer VMs dienen. Eine Box ist eine einzige Datei, die ein vorinstalliertes Betriebssystem und eine Reihe von vordefinierten Anwendungen enthält. Mit einer Box können Entwickler schnell und einfach VMs erstellen, ohne das Betriebssystem und die Anwendungen manuell installieren zu müssen.
 
 # Umsetzung
 1. Tools Installion
