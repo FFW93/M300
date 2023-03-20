@@ -29,9 +29,104 @@ Das Installieren der Tools wie Virtualbox, Vagrant und git habe ich nach der Anl
 ![Image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-06%20151739.png)
 ## LB2
 Bei der LB2 habe ich mich für das Projekt https://gitlab.com/ch-tbz-it/Stud/m300/M300/-/tree/master/vagrant/mmdb entschieden.
-Hierfür habe ich zuerst das Vagrantfile und die sb.sh Datei heruntergeladen und mit Vagrant up eine neue Maschine erstellt:
+Hier die Vagrantfiles die ich dafür benutzt habe:
+
+<pre><code>
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # All Vagrant configuration is done here. The most common configuration
+  # options are documented and commented below. For a complete reference,
+  # please see the online documentation at vagrantup.com.
+
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.define "database" do |db|
+    db.vm.box = "ubuntu/bionic64"
+	db.vm.provider "virtualbox" do |vb|
+	  vb.memory = "512"  
+	end
+    db.vm.hostname = "db01"
+    db.vm.network "private_network", ip: "192.168.55.100"
+    # MySQL Port nur im Private Network sichtbar
+	# db.vm.network "forwarded_port", guest:3306, host:3306, auto_correct: false
+  	db.vm.provision "shell", path: "db.sh"
+  end
+  
+  config.vm.define "web" do |web|
+    web.vm.box = "ubuntu/bionic64"
+    web.vm.hostname = "web01"
+    web.vm.network "private_network", ip:"192.168.55.101" 
+	web.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
+	web.vm.provider "virtualbox" do |vb|
+	  vb.memory = "512"  
+	end     
+  	web.vm.synced_folder ".", "/var/www/html"  
+	web.vm.provision "shell", inline: <<-SHELL
+		sudo apt-get update --fix-missing
+		sudo apt-get -y install debconf-utils apache2 nmap
+		sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password admin'
+		sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password admin'
+		sudo apt-get -y install php libapache2-mod-php php-curl php-cli php-mysql php-gd mysql-client  
+		# Admininer SQL UI 
+		sudo mkdir /usr/share/adminer
+		sudo wget "http://www.adminer.org/latest.php" -O /usr/share/adminer/latest.php
+		sudo ln -s /usr/share/adminer/latest.php /usr/share/adminer/adminer.php
+		echo "Alias /adminer.php /usr/share/adminer/adminer.php" | sudo tee /etc/apache2/conf-available/adminer.conf
+		sudo a2enconf adminer.conf 
+		sudo service apache2 restart 
+	  echo '127.0.0.1 localhost web01\n192.168.55.100 db01' > /etc/hosts
+SHELL
+	end  
+ end
+
+</code></pre>
+
+<pre><code>
+
+#!/bin/bash
+#
+#	Datenbank installieren und Konfigurieren
+#
+
+# root Password setzen, damit kein Dialog erscheint und die Installation haengt!
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password S3cr3tp4ssw0rd'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password S3cr3tp4ssw0rd'
+
+# Installation
+sudo apt-get update --fix-missing
+sudo apt-get install -y mysql-server
+
+# MySQL Port oeffnen
+sudo sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# User fuer Remote Zugriff einrichten - aber nur fuer Host web 192.168.55.101
+mysql -uroot -pS3cr3tp4ssw0rd <<%EOF%
+	CREATE USER 'root'@'192.168.55.101' IDENTIFIED BY 'admin';
+	GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.55.101';
+	FLUSH PRIVILEGES;
+%EOF%
+
+# Restart fuer Konfigurationsaenderung
+sudo service mysql restart
+</code></pre>
+
+Mit dem Befehl "Vagrant up" habe ich dann eine neue Maschine erstellt:
 ![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%20143203.png?raw=true)
-Beim ersten Versuch kam wie im Screenshot gezeigt eine Fehlermeldung und es wurden nich alle VMs richtig erstellt.
+
+Beim ersten Versuch kam wie im Screenshot gezeigt eine Fehlermeldung und es wurden nicht alle VMs richtig erstellt.
+
 Ich habe nicht herausgefunden an was es gelegen hat, denn als ich den Befehl ein zweites mal eingegeben habe funktionierte es einwandfrei.
+
+### Tests
+
+1. Als erstes habe ich überprüft ob die VMs auch wikrlich erstellt wurden:
 ![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%201432031.png?raw=true)
+Dies ist wie man im Screenshot sehen kann gelungen.
+
+2. Der zweite Test ging dann um die erreichbarkeit des Webservers bzw. DB
 ![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%20151513.png?raw=true)
+Dies ist wie man im Screenshot sehen kann ebenfalls gelungen.
