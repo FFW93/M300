@@ -8,7 +8,8 @@ Virtualbox ist eine Virtualisierungssoftware.
 Vagrant ist eine Open-Source Software, mit der man das erstellen und konfigurieren von VMs automatisieren kann.
 Dafür erstellt man ein Vagrantfile in der man die gewünschten konfigurationen festlegt.
 Hier ein Beispiel für den Inhalt eines solchen files:
-<code> Vagrant.configure("2") do |config|
+<pre><code> 
+Vagrant.configure("2") do |config|
         config.vm.define :apache do |web|
             web.vm.box = "bento/ubuntu-16.04"
             web.vm.provision :shell, path: "config_web.sh"
@@ -16,7 +17,7 @@ Hier ein Beispiel für den Inhalt eines solchen files:
             web.vm.network :forwarded_port, guest: 80, host: 4567
             web.vm.network "public_network", bridge: "en0: WLAN (AirPort)"
         end
-</code>
+</pre></code>
 
 # Umsetzung
 1. Tools Installion
