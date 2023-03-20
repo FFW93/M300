@@ -4,8 +4,8 @@
 
 ### Visual Studio Code
 Visual Studio Code ist ein Open-Source-Code-Editor den man für fast alle Programmiersprachen benutzen kann.
-Auch gibt es viele weitere funktionen wie die integrierung von von git was ich in folgenden Screenshot aufgezeigt habe:
-  
+Auch gibt es viele weitere funktionen wie die zum Beispiel die integrierung von von git, die ich im folgenden Screenshot aufgezeige:
+![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%20154225.png)
 ### Virtualbox
 Virtualbox ist eine Virtualisierungssoftware.
 ### Vagrant
