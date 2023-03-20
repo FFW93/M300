@@ -2,6 +2,10 @@
 
 ## Theorie
 
+### Visual Studio Code
+Visual Studio Code ist ein Open-Source-Code-Editor den man für fast alle Programmiersprachen benutzen kann.
+Auch gibt es viele weitere funktionen wie die integrierung von von git was ich in folgenden Screenshot aufgezeigt habe:
+  
 ### Virtualbox
 Virtualbox ist eine Virtualisierungssoftware.
 ### Vagrant
@@ -26,6 +30,7 @@ Vagrant Boxen sind vordefinierte virtuelle Maschinen (VMs), die als Basis für d
 ## 10 Toolumgebung
 Das Installieren der Tools wie Virtualbox, Vagrant und git habe ich nach der Anleitung gemacht und es ging Problemlos vonstatten.
 ## 20 Infrastruktur-Automatisierung 
+Hier ein Screenshot von der erstellung der esten Vagrant VM:
 ![Image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-06%20151739.png)
 ## LB2
 Bei der LB2 habe ich mich für das Projekt https://gitlab.com/ch-tbz-it/Stud/m300/M300/-/tree/master/vagrant/mmdb entschieden.
@@ -127,6 +132,6 @@ Ich habe nicht herausgefunden an was es gelegen hat, denn als ich den Befehl ein
 ![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%201432031.png?raw=true)
 Dies ist wie man im Screenshot sehen kann gelungen.
 
-2. Der zweite Test ging dann um die erreichbarkeit des Webservers bzw. DB
+2. Der zweite Test ging dann um die erreichbarkeit des Webservers bzw. der DB
 ![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%20151513.png?raw=true)
-Dies ist wie man im Screenshot sehen kann ebenfalls gelungen.
+Dies ist wie man im Screenshot sehen kann, ebenfalls gelungen.
