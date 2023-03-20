@@ -2,6 +2,10 @@
 
 ## Theorie
 
+### Github
+
+GitHub ist eine webbasierte Plattform zur Versionsverwaltung von Softwareprojekten. Sie ermöglicht es Entwicklern, gemeinsam an Code zu arbeiten, Änderungen zu verfolgen, Pull-Requests zu erstellen und Reviews durchzuführen. GitHub bietet auch eine Vielzahl von Tools zur Zusammenarbeit und zur Verwaltung von Projekten, wie z.B. Issue-Tracking und Projekt-Boards. Es ist eine wichtige Ressource für die Open-Source-Community und wird von vielen Unternehmen und Entwicklern genutzt, um ihre Arbeit zu teilen und zu verbessern.
+
 ### Visual Studio Code
 Visual Studio Code ist ein Open-Source-Code-Editor den man für fast alle Programmiersprachen benutzen kann.
 Auch gibt es viele weitere funktionen wie die zum Beispiel die integrierung von von git, die ich im folgenden Screenshot aufgezeige:
@@ -130,8 +134,10 @@ Ich habe nicht herausgefunden an was es gelegen hat, denn als ich den Befehl ein
 
 1. Als erstes habe ich überprüft ob die VMs auch wikrlich erstellt wurden:
 ![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%201432031.png?raw=true)
+
 Dies ist wie man im Screenshot sehen kann gelungen.
 
 2. Der zweite Test ging dann um die erreichbarkeit des Webservers bzw. der DB
 ![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%20151513.png?raw=true)
+
 Dies ist wie man im Screenshot sehen kann, ebenfalls gelungen.
