@@ -23,8 +23,8 @@ Der Zweite wichtige Bestandteil von Vagrant sind Boxen.
 Vagrant Boxen sind vordefinierte virtuelle Maschinen (VMs), die als Basis für die Erstellung neuer VMs dienen. Eine Box ist eine einzige Datei, die ein vorinstalliertes Betriebssystem und eine Reihe von vordefinierten Anwendungen enthält. Mit einer Box können Entwickler schnell und einfach VMs erstellen, ohne das Betriebssystem und die Anwendungen manuell installieren zu müssen.
 
 # Umsetzung
-1. Tools Installion
+## 10 Toolumgebung
     Das Installieren der Tools wie Virtualbox, Vagrant und git habe ich nach der Anleitung gemacht und es ging Problemlos vonstatten.
-2. Erste VM mit Vagrant: 
+## 20 Infrastruktur-Automatisierung 
     ![Image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-06%20151739.png)
 
