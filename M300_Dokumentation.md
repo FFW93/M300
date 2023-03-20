@@ -24,9 +24,14 @@ Vagrant Boxen sind vordefinierte virtuelle Maschinen (VMs), die als Basis für d
 
 # Umsetzung
 ## 10 Toolumgebung
-    Das Installieren der Tools wie Virtualbox, Vagrant und git habe ich nach der Anleitung gemacht und es ging Problemlos vonstatten.
+Das Installieren der Tools wie Virtualbox, Vagrant und git habe ich nach der Anleitung gemacht und es ging Problemlos vonstatten.
 ## 20 Infrastruktur-Automatisierung 
-    ![Image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-06%20151739.png)
+![Image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-06%20151739.png)
 ## LB2
 Bei der LB2 habe ich mich für das Projekt https://gitlab.com/ch-tbz-it/Stud/m300/M300/-/tree/master/vagrant/mmdb entschieden.
-Hierfür habe ich zuerst das Vagrantfile und die sb.sh Datei heruntergeladen und mir Vagrant up eine neue Maschine erstellt:
+Hierfür habe ich zuerst das Vagrantfile und die sb.sh Datei heruntergeladen und mit Vagrant up eine neue Maschine erstellt:
+![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%20143203.png?raw=true)
+Beim ersten Versuch kam wie im Screenshot gezeigt eine Fehlermeldung und es wurden nich alle VMs richtig erstellt.
+Ich habe nicht herausgefunden an was es gelegen hat, denn als ich den Befehl ein zweites mal eingegeben habe funktionierte es einwandfrei.
+![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%201432031.png?raw=true)
+![image](https://github.com/FFW93/M300/blob/main/Bilder/Screenshot%202023-03-20%20151513.png?raw=true)
