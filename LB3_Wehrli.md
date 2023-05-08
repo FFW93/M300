@@ -133,7 +133,9 @@ Dieser erstellte die Container fehlerlos, wie ihr unten in den Screenshots seht:
 
 Ich habe noch getestet ob das Prometheus Webinterface funktioniert und die Container überwacht werden:
 ![image](https://github.com/FFW93/M300/blob/899a62aa3d2b7151e8aecef83915bbed19283803/Bilder/08-05-_2023_14-33-46.png)
-Wie im Screenshot ersichtlich funktionierte dies einfwandfrei.
+Wie im Screenshot ersichtlich funktionierte dies einwandfrei.
 
 
 ## Reflexion
+
+Bei dieser Aufgabe konnte ich viel über Container und Docker lernen. Ich habe einen enormen Wissenszuwachs erlebt seit dem Start diese Moduls und werde mich auch in Zukunft weiter mit Container-Virtualisierung beschäftigen. Zuerst hatte ich ziemlch Probleme eine Idee für mein Projekt zu finden, Valerio konnte mir dann aber dabei helfen. Mein Wissen konnte eignete ich mir vorallem durch googlen und Chatgpt an und notierte es dann in eigenen Worten in der doku. Alles in allem hat mir das Projekt spass gemacht und mich sehr interessiert. 
