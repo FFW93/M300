@@ -97,11 +97,10 @@ services:
       - "--web.listen-address=0.0.0.0:9104"
 </code></pre>
 
-## prometheus 
+### Prometheus 
 
 Als letztes habe ich dann noch das prometheus.yml erstellt.
-<code><pre>
-
+<pre><code>
 global:
   # Refresh Interval
   scrape_interval: 15s
@@ -116,12 +115,23 @@ scrape_configs:
     static_configs:
       # MySQL Exporter Container 
       - targets: ['mysqlexporter:9104']
-
 </code></pre>
 
 
+Als ich all diese FIles dann erstellt habe und alle im Selben Ordner Absopeicherte, führte ich folgenden Befehl aus: 
+<pre><code>
+docker-compose up -d
+</code></pre>
+
+Dieser erstellte die Container fehlerlos, wie ihr unten in den Screenshots seht:
+
+
+## Testfälle
+
+### Prometheus Webinterface
+
+Ich habe noch getestet ob das Prometheus Webinterface funktioniert und die Container überwacht werden:
 
 
 
-
-### Reflexion
+## Reflexion
